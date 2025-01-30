@@ -1,0 +1,584 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root {
+    --orange: #ffa500;
+    --dark-grey: #333;
+    --whithe: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    font-family: "Nunito", serif;
+    text-decoration: none;
+    transition: all .2s linear;
+    outline: none;
+    border: none;
+}
+
+*::selection {
+    color: var(--whithe);
+    background: var(--orange);
+}
+
+html {
+    font-size: 62.5%;
+}
+
+section {
+    padding: 2rem 9%;
+}
+
+.heading {
+    text-align: center;
+    padding: 2.5rem 0;
+}
+
+.heading span {
+    font-size: 3.5rem;
+    background: rgba(255, 165, 0, .2);
+    color: var(--orange);
+    border-radius: .5rem;
+    padding: .2rem 1rem;
+}
+
+.heading span .space {
+    background: none;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    background-color: var(--orange);
+    color: var(--whithe);
+    padding: .8rem 3rem;
+    font-size: 1.7rem;
+    border: .2rem solid var(--orange);
+    cursor: pointer;
+
+    &:hover {
+        color: var(--orange);
+        background-color: rgba(255, 165, 0, .2);
+    }
+}
+
+/* ===========header=========== */
+
+header {
+    background: var(--dark-grey);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 9%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    position: absolute;
+}
+
+header #menu-bar {
+    display: none;
+    padding: .5rem 1.2rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    color: #fff;
+    font-size: 3rem;
+    border: .1rem solid;
+}
+
+header .logo {
+    font-size: 2.5rem;
+    color: var(--whithe);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+header .logo span {
+    color: var(--orange);
+}
+
+header nav a {
+    color: var(--whithe);
+    font-size: 2rem;
+    margin: 0 .8rem;
+    position: relative;
+    cursor: pointer;
+    padding: .5rem 1rem;
+    transition: color 0.25s;
+}
+
+header nav a::after{
+    position: absolute;
+    content: "";
+    inset: 0;
+    background: var(--orange);
+    scale: 1 0;
+    z-index: -1;
+    transition: 0.45s;
+    border-radius: 10px;
+
+}
+
+header nav a:hover{
+    color: black;
+}
+header nav a:hover::after{
+    scale:  1 1;
+
+}
+
+header .icons i {
+    margin-right: 2rem;
+    font-size: 2.5rem;
+    color: var(--whithe);
+    cursor: pointer;
+}
+
+header .icons i:hover {
+    color: var(--orange);
+    translate: -6px  -4px;
+}
+
+
+header form {
+    position: absolute;
+    display: flex;
+    top: 70px;
+    right: 0;
+    left: 0;
+    background: #333;
+    font-size: 3rem;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    border: .3rem solid rgba(255, 255, 255, .2);
+    padding: 1rem 2rem;
+}
+
+header form.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+
+}
+
+header form i {
+    position: relative;
+    padding: .5rem 0rem .5rem 2rem;
+    color: #fff;
+    font-size: 3rem;
+}
+
+header form input {
+    position: relative;
+    width: 100%;
+    height: 4rem;
+    border-radius: .5rem;
+    /* margin-left: 2px; */
+    padding-left: 1.5rem;
+}
+
+
+
+/*===========home========== */
+
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+
+.home .content h3 {
+    font-size: 4.5rem;
+    color: var(--whithe);
+    text-transform: uppercase;
+}
+
+.home .content p {
+    font-size: 2.5rem;
+    color: var(--whithe);
+    padding: .5rem 0;
+}
+
+.home video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.home .content {
+    text-align: center;
+}
+
+.home .controls {
+    position: relative;
+    background-color: rgba(0, 0, 0, .7);
+    top: 10rem;
+    padding: 1rem;
+    border-radius: 5rem;
+}
+
+.home .controls .vid-btn {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    background: var(--whithe);
+    border-radius: 50%;
+    margin: 0 .5rem;
+    cursor: pointer;
+}
+
+.home .controls .vid-btn.active {
+    background: var(--orange);
+}
+
+/* ===============book
+============= */
+
+.book .row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.book .row .image {
+    width: 49%;
+}
+
+.book .row .image img {
+    width: 100%;
+}
+
+.book .row form {
+    width: 49%;
+    padding: 2rem;
+    border-radius: .5rem;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .1);
+}
+
+.book .row form inputBox {
+    padding: .5rem 0;
+}
+
+.book .row form .inputBox h3 {
+    font-size: 2rem;
+    padding: 1rem 0;
+    color: #666;
+}
+
+.book .row form .inputBox input {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.7rem;
+    color: var(--dark-grey);
+    text-transform: lowercase;
+    border: .1rem solid rgba(0, 0, 0, .1)
+}
+
+/*=========packages=======*/
+.packages .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.packages .box-container .box {
+    width: 30%;
+    overflow: hidden;
+    border-radius: .5rem;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .1);
+}
+
+.packages .box-container .box img {
+    width: 100%;
+    height: 25rem;
+}
+
+.packages .box-container .box .content {
+    padding: 2rem;
+}
+
+.packages .box-container .box .content h3 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.packages .box-container .box .content h3 i {
+    color: var(--orange);
+}
+
+.packages .box-container .box .content p {
+    font-size: 1.7rem;
+    color: #666;
+    padding: 1rem 0;
+}
+
+.packages .box-container .box .content .stars i {
+    color: var(--orange);
+    font-size: 1.7rem;
+}
+
+.packages .box-container .box .content .price {
+    color: #333;
+    font-size: 2rem;
+    padding-top: 1rem;
+}
+
+.packages .box-container .box .content .price span {
+    font-size: 1.5rem;
+    color: #666;
+    text-decoration: line-through;
+}
+
+/* =========service=========== */
+
+.services .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.services .box-container .box {
+    width: 30%;
+    border-radius: .5rem;
+    text-align: center;
+
+    &:hover {
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, .1);
+    }
+}
+
+.services .box-container .box i {
+    color: var(--orange);
+    font-size: 5rem;
+    padding: 1rem;
+}
+
+.services .box-container .box h3 {
+    font-size: 2.5rem;
+    padding: 1rem;
+    color: var(--dark-grey);
+}
+
+.services .box-container .box p {
+    color: #666;
+    font-size: 1.5rem;
+    padding: 1rem 0;
+}
+
+/* =========gallery========= */
+
+.gallery .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.gallery .box-container .box {
+    position: relative;
+    width: 30%;
+    height: 25rem;
+    overflow: hidden;
+    border-radius: .5rem;
+    border: 1rem solid var(--whithe);
+    box-shadow: rgba(0, 0, 0, .1);
+}
+
+.gallery .box-container .box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery .box-container .box .content {
+    position: absolute;
+    top: -250px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 5rem 2rem 2rem 2rem;
+    background: rgba(0, 0, 0, .7);
+}
+
+.gallery .box-container .box:hover .content {
+    top: 0px;
+    transition: all .2s linear;
+}
+
+.gallery .box-container .box .content h3 {
+    font-size: 2.5rem;
+    color: var(--orange);
+}
+
+.gallery .box-container .box .content p {
+    font-size: 1.5rem;
+    color: #eee;
+    padding: .5rem 0;
+}
+
+.gallery .box-container .box .img {
+    z-index: -1000;
+}
+
+/* ========================= footer ========================= */
+footer {
+    background: #333;
+}
+
+footer .box-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+footer .box-container .box {
+    width: 28rem;
+    padding: 1rem 0;
+}
+
+footer .box-container .box h3 {
+    color: #fff;
+    font-size: 2.5rem;
+    padding: .7rem 0;
+}
+
+footer .box-container .box p {
+    font-size: 1.5rem;
+    padding: .7rem 0;
+    color: #eee;
+}
+
+footer .box-container .box a {
+    display: block;
+    font-size: 1.5rem;
+    padding: .7rem 0;
+    color: #eee;
+
+    &:hover {
+        color: var(--orange);
+        text-decoration: underline;
+    }
+}
+
+footer .credit {
+    color: #fff;
+    text-align: center;
+    margin: 1rem 16rem 0 16rem;
+    padding: 2rem;
+    font-size: 2rem;
+    border-top: .1rem solid rgba(255, 255, 255, .2);
+}
+
+footer .credit span {
+    color: var(--orange);
+}
+
+
+
+/* ===========media queires============= */
+@media (max-width:1200px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media(max-width:991px) {
+
+    header,
+    section {
+        padding: 2rem;
+    }
+}
+
+@media(max-width:860px) {
+
+    .packages .box-container .box,
+    .services .box-container .box,
+    .gallery .box-container .box {
+        width: 45%;
+    }
+}
+
+@media(max-width:768px) {
+    header #menu-bar {
+        display: block;
+    }
+
+    header nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #333;
+        padding: 1rem 2rem;
+        border: .1rem solid rgba(255, 255, 255, .2);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    header nav.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    header nav a {
+        display: block;
+        background: #222;
+        margin: 1.5rem 0;
+        padding: 1.5rem;
+        border-radius: .5rem;
+    }
+}
+
+@media(max-width:710px) {
+
+    .book .row .image,
+    .book .row form,
+    .contact .row .image,
+    .contact .row form {
+        width: 100%;
+    }
+}
+
+@media (max-width:600px) {
+
+    .packages .box-container .box,
+    .services .box-container .box,
+    .gallery .box-container .box {
+        width: 70%;
+    }
+}
+
+@media (max-width:520px) {
+    footer .box-container .box {
+        text-align: center;
+    }
+
+    footer .credit {
+        margin: 1rem 0 0 0;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+
+    .heading span {
+        font-size: 2.5rem;
+    }
+
+    .contact .row form .inputBox input {
+        width: 100%;
+    }
+}
